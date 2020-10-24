@@ -23,13 +23,15 @@
                                         <label for="id">ID</label>
                                         <p:inputText id="id" 
                                                      styleClass="form-control" 
-                                                     placeholder="Enter your id"/>
+                                                     placeholder="Enter your id"
+                                                     value="#{student.id}"/>
                                     </div>
                                     <div class="col-md-6">
                                         <label for="name">Name</label>
                                         <p:inputText id="name" 
                                                      styleClass="form-control" 
-                                                     placeholder="Enter your name"/>
+                                                     placeholder="Enter your name"
+                                                     value="#{student.name}"/>
                                     </div>
                                 </div>
                             </div>
@@ -38,12 +40,13 @@
                                 <p:inputText  
                                     id="mobile" 
                                     styleClass="form-control" 
-                                    placeholder="Enter your mobile number"/>
+                                    placeholder="Enter your mobile number"
+                                    value="#{student.mobile}"/>
                             </div >
 
                             <div class="form-group">
                                 <label for="course">Course</label>
-                                <p:selectOneMenu id="course" style="width:100%">
+                                <p:selectOneMenu id="course" style="width:100%" value="#{student.course}">
                                     <f:selectItem itemValue="JEE" itemLabel="JEE"/>
                                     <f:selectItem itemValue="GAVE" itemLabel="GAVE"/>
                                     <f:selectItem itemValue="C#" itemLabel="C#"/>
@@ -52,14 +55,14 @@
                             </div>
                             <div class="form-group">
                                 <label for="gender">Gender</label>
-                                <p:selectOneRadio id="Gender" style="">
+                                <p:selectOneRadio id="Gender" style="" value="#{student.gender}">
                                     <f:selectItem itemValue="Male" itemLabel="Male"/>
                                     <f:selectItem itemValue="Female" itemLabel="Female"/>
                                 </p:selectOneRadio>
                             </div>
                             <div class="form-group">
                                 <label for="skill">Skill</label>
-                                <p:selectManyCheckbox id="skill" style="">
+                                <p:selectManyCheckbox id="skill" style="" value="#{student.skill}">
                                     <f:selectItem itemValue="html" itemLabel="html"/>
                                     <f:selectItem itemValue="css" itemLabel="Female"/>
                                 </p:selectManyCheckbox>
@@ -68,12 +71,12 @@
                                 <label for="address">Address</label>
                                 <p:inputTextarea id="address" 
                                                  styleClass="form-control" 
-                                                 >
+                                                 value="#{student.address}">
 
                                 </p:inputTextarea>
                             </div>
                             <div class="form-group">
-                                <p:commandButton styleClass="btn btn-primary" value="save"/>
+                                <p:commandButton action="#{student.store()}" styleClass="btn btn-primary" value="save"/>
                             </div>
 
                         </h:form>
